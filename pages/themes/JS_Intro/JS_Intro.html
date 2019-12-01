@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 	<!-- css & themes include -->
 	<link rel="stylesheet" href="../../../lib/reveal.js/css/reveal.css">
-	<link rel="stylesheet" href="../../../outfit/css/themes/light.css" id="theme">
+	<link rel="stylesheet" href="../../../outfit/css/themes/dark.css" id="theme">
 	<!-- Printing and PDF exports -->
 	<script>
 		var link = document.createElement( 'link' );
@@ -48,20 +48,30 @@
 -->
 <section><h1>Въведение в JavaScript</h1></section>
 <section data-transition="zoom">
-	<div class="copyright">
-		<div class="note">
-			<p>Създаден за</p>
-		</div>
-		<div class="company">
-			<a href="http://progressbg.net/kurs-po-web-design/">
-			<img style="height:80%" src="../../../outfit/images/logos/ProgressBG_logo_529_127.png">
-			</a>
-		</div>
-		<div class="author">
-			<span>Iva E. Popova, 2015-2018,</span>
-			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-		</div>
-	</div>
+  <section>
+    <div class="copyright">
+      <div class="note">
+        <p>Created for</p>
+      </div>
+      <div class="company">
+        <a href="http://progressbg.net/kurs-po-web-design/">
+        <img src="../../../outfit/images/logos/ProgressBG_logo_529_127.png">
+        </a>
+      </div>      
+    </div>
+  </section>
+  <section class="copyright" data-transition="zoom" style="margin-top: -2em;">
+    <div class="note">
+      <p>Created by</p>
+    </div>
+    <div class="company">
+       <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova</a></div>
+    </div>
+    <div class="author">
+      <span>Iva E. Popova, 2015-2019</span>
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+    </div>
+  </section>
 </section>
 
 <section data-min="5"><h1>JavaScript</h1></section>
@@ -91,14 +101,9 @@
 			<dt>Скриптов език (интерпретиран и слабо типизиран)</dt>
 			<dt class="note">Общото между Java и JavaScript е колкото между Car и Carnival!</dt>
 		</dl>
-	</section>
+	</section>	
 </section>
 
-<!-- <section><h2>Защо не бива да бъркаме JavaScript с Java.</h2>
-	<section><h3>sub_title</h3>
-
-	</section>
-</section> -->
 
 <section><h1>Какво можем да правим с JavaScript?</h1></section>
 <section><h2>Какво можем да правим с JavaScript?</h2>
@@ -198,6 +203,10 @@
 
 <section><h1>Кратка история на JavaScript</h1></section>
 <section data-notes="20min"><h2>Защо и как се създава?</h2>
+	<section>		
+		<a href="images/JS_vs_good_parts_fun.jpg"><img src="images/JS_vs_good_parts_fun.jpg" style="height: 100vh"></a>
+		<p>Книгата на Douglas Crockford е издадена <b>2008</b>г. и точно това бе тогава състоянието на езика :)</p>
+	</section>
 	<section data-notes="3min/total 3"><h3>1995</h3>
 		<p><em>Първа война между браузерите</em></p>
 		<dl class="fa">
@@ -232,17 +241,34 @@
 			<dt>Първа версия на Node.js (V8 базиран).</dt>
 			<dt>ECMAScript 5 (ES5) стандарт, съдържащ значителни подобрения на езика.</dt>
 		</dl>
-	</section>
+	</section>	
+	<section data-notes="1min/total 18"><h3>2009</h3>
+        <p>Initial release of <a href="https://en.wikipedia.org/wiki/Node.js">Node.js</a></p>
+        <iframe width="768" src="https://www.youtube.com/embed/ztspvPYybIY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
 	<section data-notes="1min/total 5"><h3>2012</h3>
 		<dl class="fa">
-			<dt>Microsoft пускат <a href="https://www.typescriptlang.org/">TypeScript</a>.</dt>
+			<dt>Microsoft пускат <a href="https://www.typescriptlang.org/">TypeScript</a>.</dt>			 
 		</dl>
+		<iframe width="768" src="https://www.youtube.com/embed/3dqZW_DqHIQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 	</section>
+	<section data-notes="1min/total NN"><h3>2013</h3>
+        <p>Първа версия на <span class="note">React.js</span></p>
+        <iframe width="768" src="https://www.youtube.com/embed/XxVg_s8xAms" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+    <section data-notes="1min/total NN"><h3>2014</h3>
+        <p>Първа версия на <span class="note">Vue.js</span></p>
+        <iframe width="768" src="https://www.youtube.com/embed/pBBSp_iIiVM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
 	<section data-notes="1min/total 5"><h3>2014</h3>
 		<dl class="fa">
 			<dt>JavaScript е удостоен като "Програмен език на годината" за 2014, според индексът <a href="https://www.tiobe.com/tiobe-index/">Tiobe</a>.</dt>
 		</dl>
 	</section>
+	<section data-notes="1min/total NN"><h3>2014</h3>
+        <p><span class="note">WebComponents</span> Standard</p>
+        <iframe width="768" src="https://www.youtube.com/embed/3QLmAm9xtnU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
 	<section data-notes="1min/total 5"><h3>2015</h3>
 		<dl class="fa">
 			<dt>ECMAScript 6 (ES6) - с множество нововъведения, започнали от ES5, езика се превръща в "сериозен" език за програмиране.</dt>
@@ -250,6 +276,14 @@
 			<dt>Започва да се използва терминът <b>ES.Next</b>, който касае текущите бъдещи версии на стандарта. Разработва се от комитета с име <b>tc33</b>, който публикуват работата си в github: <a href="https://github.com/tc39/proposals">tc39 - proposals</a></dt>
 		</dl>
 	</section>
+	<section data-notes="1min/total NN"><h3>2017</h3>
+        <p>Въвежда се Web стандарта <span class="note">WebAssembly</span></p>
+        <iframe width="768" src="https://www.youtube.com/embed/PpuAqLCraAQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+     <section><h3>Или накратко за историята на JS...</h3>
+        <p>От нейния създател - Brendan Eich</p>
+        <iframe width="768"  src="https://www.youtube.com/embed/aX3ZABCdC38" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
 	<!--
 	<section><h3>Brendan Eich on designing JavaScript (Part of the JSConf EU 4ß Keynote)</h3>
 		<p style="font-size: .6em">В този клип, това наистина е създателя на JavaScript - Brendan Eich, но демонстриращ голямо чувство за хумор, като имитира <a href="https://www.youtube.com/watch?v=lJx6cF-H__I">Jonathan Ive explaining the Unibody-Design of MacBook</a>.</p>
@@ -354,5 +388,7 @@
 			]
 		});
 	</script>
+	<!-- linkedin badge -->
+	<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 </body>
 </html>

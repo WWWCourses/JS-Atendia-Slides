@@ -7,14 +7,14 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <!-- css & themes include -->
-  <link rel="stylesheet" href="../../../../lib/reveal.js/css/reveal.css">
-  <link rel="stylesheet" href="../../../../outfit/css/themes/dark.css" id="theme">
+  <link rel="stylesheet" href="../../../lib/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="../../../outfit/css/themes/dark.css" id="theme">
   <!-- Printing and PDF exports -->
   <script>
     var link = document.createElement( 'link' );
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? '../../../../lib/reveal.js/css/print/pdf.css' : '../../../../lib/reveal.js/css/print/paper.css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../../../lib/reveal.js/css/print/pdf.css' : '../../../lib/reveal.js/css/print/paper.css';
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
   <!--[if lt IE 9]>
@@ -40,7 +40,7 @@
 <body>
   <div class="reveal default center" data-transition-speed="default" data-background-transition="default">
     <div class="top_links">
-      <a class="home_link" href="../../../../pages/agenda/beginners.html#Course_Intro" target="_top"><i class="fa fa-home"></i></a>
+      <a class="home_link" href="../../../pages/agenda/beginners.html#JS_BasicSyntax_1" target="_top"><i class="fa fa-home"></i></a>
       <span class="help_link"><i class="fa fa-question"></i></span>
       <div class="help_text">
         <div><span>N/Спейс</span><span>следващ слайд</span></div>
@@ -50,9 +50,9 @@
       </div>
     </div>
     <div class="footer theme_switch">
-      <a href="#" onclick="document.getElementById('theme').setAttribute('href','../../../../outfit/css/themes/dark.css'); return false;">Dark</a>
-      <a href="#" onclick="document.getElementById('theme').setAttribute('href','../../../../outfit/css/themes/light.css'); return false;">Light</a>
-      <a href="#" onclick="document.getElementById('theme').setAttribute('href','../../../../outfit/css/themes/projector.css'); return false;">Projector</a>
+      <a href="#" onclick="document.getElementById('theme').setAttribute('href','../../../outfit/css/themes/dark.css'); return false;">Dark</a>
+      <a href="#" onclick="document.getElementById('theme').setAttribute('href','../../../outfit/css/themes/light.css'); return false;">Light</a>
+      <a href="#" onclick="document.getElementById('theme').setAttribute('href','../../../outfit/css/themes/projector.css'); return false;">Projector</a>
     </div>
     <div class="slides">
 <!--
@@ -63,25 +63,36 @@
 <section><h1>JavaScript - основни синтактични елементи</h1>
   <h3>част 1</h3>
 </section>
+
 <section data-transition="zoom">
-  <div class="copyright">
+  <section>
+    <div class="copyright">
+      <div class="note">
+        <p>Created for</p>
+      </div>
+      <div class="company">
+        <a href="http://progressbg.net/kurs-po-web-design/">
+        <img src="../../../outfit/images/logos/ProgressBG_logo_529_127.png">
+        </a>
+      </div>      
+    </div>
+  </section>
+  <section class="copyright" data-transition="zoom" style="margin-top: -2em;">
     <div class="note">
-      <p>Създаден за</p>
+      <p>Created by</p>
     </div>
     <div class="company">
-      <a href="http://progressbg.net/kurs-po-web-design/">
-      <img style="height:80%" src="../../../../outfit/images/logos/ProgressBG_logo_529_127.png">
-      </a>
+       <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova</a></div>
     </div>
     <div class="author">
-      <span>Iva E. Popova, 2015-2018,</span>
+      <span>Iva E. Popova, 2015-2019</span>
       <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
     </div>
-  </div>
+  </section>
 </section>
 
 
-<section id="ProgramStrucutre"><h1>Структура на програмата</h1></section>
+<section id="ProgramStrucutre" data-min="5"><h1>Структура на програмата</h1></section>
 <section id="ProgramStrucutre"><h2>Структура на програмата</h2>
   <section>
     <dl class="fa">
@@ -140,7 +151,7 @@
   </section>
 </section>
 
-<section id="Variables"><h1>Променливи (Variables)</h1></section>
+<section id="Variables" data-min="5"><h1>Променливи (Variables)</h1></section>
 <section id="Variables"><h2>Променливи (Variables)</h2>
   <section><h3>Какво е променлива в JavaScript?</h3>
     <dl class="fa">
@@ -152,9 +163,9 @@
   </section>
   <section><h3>Къде и как се създават променливите</h3>
     <pre><code rel="JS">
-      var x = 1;
-      var y = 2;
-      var z;
+      let x = 1;
+      let y = 2;
+      let z;
     </code></pre>
     <a href="images/variables_in_RAM.png" title="click for bigger image"><img src="images/variables_in_RAM.png" style="height: 80vh"></a>
   </section>
@@ -163,16 +174,16 @@
       <dt>Създаването на една променлива се нарича <span class="note">деклариране</span> на променлива.
       В JavaScript това става чрез запазената за езика дума <code class="note">var</code>.
       </dt>
-      <dd class="advanced"></i>В ECMAScript 6, се въвеждат и нови думи за деклариране на променливи: <code class="note">let</code> и <code class="note">const</code>, които ще разгледаме след като изясним понятията "scope" и "hoisting".</dd>
+      <dt></i>В ES 6, се въвеждат и нови думи за деклариране на променливи: <code class="note">let</code> и <code class="note">const</code>, които ще разгледаме след като изясним понятията "scope" и "hoisting".</dt>
       <dt>Ако желаем, може при създаването на променливата, да запишем в нея конкретна стойност - т.е. да <span class="note">дефинираме</span>(<span>инициализираме</span>) променливата.</dt>
-      <dt style="font-size: .8em;">В JavaScript, една променлива винаги е дефинирана, тъй като ако не зададем екслплицитно стойност при декларацията, то в променливата се записва стойността <span class="note">undefined</span></dt>
+      <dt>В JavaScript, една променлива винаги е дефинирана, тъй като ако не зададем екслплицитно стойност при декларацията, то в променливата се записва стойността <span class="note">undefined</span>.</dt>
     </dl>
     <pre><code rel="JS">
-      var x;      // деклариране на променливата x
+      let x;      // деклариране на променливата x
       x = 10;     // записваме в x стойност 10
-      var y;      // деклариране на променливата y
-      var a,b;    // деклариране на променливите a и b
-      var x = 10; // деклариране и инициализиране на x със стойността 10
+      let y;      // деклариране на променливата y
+      let a,b;    // деклариране на променливите a и b
+      let x = 10; // деклариране и инициализиране на x със стойността 10
     </code></pre>
   </section>
   <section><h3>Глобални променливи</h3>
@@ -181,7 +192,7 @@
       x = 10;
       console.log(x); // 10 (Error in strict mode)
     </code></pre>
-    <p class="note">Това се счита за изключително лоша практика, тъй като се създава "<strong>глобална променлива</strong>" (в темата за <a href="../../../../pages/themes/beginners/JS_Functions/JS_Functions.html#Scope">scope</a>, ще разгледаме защо), и в новите версии на езика (от ЕС5.1) при използването на strict mode, това би <strong>довело до грешка</strong>!</p>
+    <p class="note">Това се счита за изключително лоша практика, тъй като се създава "<strong>глобална променлива</strong>" (в темата за <a href="../../../pages/themes/beginners/JS_Functions/JS_Functions.html#Scope">scope</a>, ще разгледаме защо), и в новите версии на езика (от ЕС5.1) при използването на strict mode, това би <strong>довело до грешка</strong>!</p>
   </section>
   <section><h3>Правила за имена на променливи</h3>
     <dl class="fa">
@@ -224,20 +235,20 @@
       <dt>Ако е необходимо името да се състои от две или повече думи, то в JavaScript се препоръчва да се използва <span class="note">lowerCamelCase</span> - първата дума започва с малка буква, а следващите думи се залепват непосредствено като започват с голяма буква.</dt>
     </dl>
     <pre><code rel="JS" class="js">
-      var camelCasedName = 'something';
+       camelCasedName = 'something';
     </code></pre>
   </section>
   <section><h3>Примери:</h3>
     <pre><code rel="JS">
-      var x;  // ок
-      var $x; // позволено, но не се препоръчва
-      var userName; // ок
-      var user name; // SyntaxError!
-      var username; //  ok, но е по-трудно четима и не е според конвенцията (lowerCamelCase)
-      var user-first-name; //SyntaxError
-      var user_first_name; //ok, но не е според конвенцията (lowerCamelCase)
-      var userFirstName; //ok
-      var x234AB$$53; // синтактично е ок, но какво ли означава?
+      let x;  // ок
+      let $x; // позволено, но не се препоръчва
+      let userName; // ок
+      let user name; // SyntaxError!
+      let username; //  ok, но е по-трудно четима и не е според конвенцията (lowerCamelCase)
+      let user-first-name; //SyntaxError
+      let user_first_name; //ok, но не е според конвенцията (lowerCamelCase)
+      let userFirstName; //ok
+      let x234AB$$53; // синтактично е ок, но какво ли означава?
     </code></pre>
   </section>
 </section>
@@ -251,21 +262,20 @@
       <dd>"прости" ( наричат се още примитивни, атомарни)</dd>
       <dd>"съставни " типове</dd>
     </dl>
-
   </section>
   <section><h3>Число (number)</h3>
     <pre><code rel="JS">
       // цяло число, положително
-      var x = 10;
+      let x = 10;
 
       // цяло число, отрицателно
-      var y = ­-5;
+      let y = ­-5;
 
       // реално число
-      var pi = 3.14;
+      const pi = 3.14;
 
       // реално число, експонентен запис
-      var million = 10e6;
+      let million = 10e6;
     </code></pre>
   </section>
   <section><h3>Низ (string):</h3>
@@ -274,11 +284,11 @@
       <dt>В JavaScript, за разлика от други езици, <span class="note">няма значение, дали ще използваме единични или двойни кавички</span>, но трябва да внимаваме ако такива символи ще присъстват в самия низ</dt>
     </dl>
     <pre><code rel="JS">
-      var userName = 'Ada Byron'; // ок
-      var nickName = "LadyLovelace"; //ок
-      var quot = 'И той отсече - "Ще вали!"'; //ок
-      var quot = "И той отсече - "Ще вали!""; //SyntaxError
-      var foo = "What's the time?" //ок
+      let userName = 'Ada Byron'; // ок
+      let nickName = "LadyLovelace"; //ок
+      let quotGood = 'И той отсече - "Ще вали!"'; //ок
+      let quotBad = "И той отсече - "Ще вали!""; //SyntaxError
+      let foo = "What's the time?" //ок
     </code></pre>
   </section>
   <section><h3><code>\</code> escape character in string:</h3>
@@ -312,7 +322,7 @@
     <dl class="fa" style="font-size: .8em;">
       <dt>Забележете, че в низовете не може да използваме буквално символ за нов ред (клавиша enter):</dt>
       <pre style="font-size: .6em; width: 110%;"><code rel="JS" class="js">
-      var lyrics = "В късна нощ — преди години — сам над книгите старинни,
+      let lyrics = "В късна нощ — преди години — сам над книгите старинни,
             безотраден, вниквах, жаден, в знания незнайни тук; —
             скръбен, търсех без сполука мир във тайната наука —
             но оборен в сънна скука, чух внезапно бавен звук."
@@ -320,11 +330,11 @@
       </code></pre>
       <dt>но можем да го заместим с "\n":</dt>
       <pre style="font-size: .6em; width: 110%;"><code rel="JS" class="js">
-        var lyrics = "В късна нощ — преди години — сам над книгите старинни,\nбезотраден, вниквах, жаден, в знания незнайни тук; —\nскръбен, търсех без сполука мир във тайната наука —\nно оборен в сънна скука, чух внезапно бавен звук."
+        let lyrics = "В късна нощ — преди години — сам над книгите старинни,\nбезотраден, вниквах, жаден, в знания незнайни тук; —\nскръбен, търсех без сполука мир във тайната наука —\nно оборен в сънна скука, чух внезапно бавен звук."
       </code></pre>
       <dt>или:</dt>
       <pre style="font-size: .6em; width: 110%;"><code rel="JS" class="js">
-        var lyrics = "В късна нощ — преди години — сам над книгите старинни," +
+        let lyrics = "В късна нощ — преди години — сам над книгите старинни," +
                "безотраден, вниквах, жаден, в знания незнайни тук; —" +
                "скръбен, търсех без сполука мир във тайната наука —" +
                "но оборен в сънна скука, чух внезапно бавен звук.";
@@ -336,7 +346,7 @@
       <dt>В ES6 се въвежда и така наречения "<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">template string</a>", където низа се огражда в <b class="note">`</b> и <span class="note">`</span> (backticks).</dt>
       <dt>Те добавят възможност в низ, да въвеждаме нов (enter) ред</dt>
       <pre style="font-size: .6em; width: 110%;"><code rel="JS" class="js">
-        var lyrics = `В късна нощ — преди години — сам над книгите старинни,
+        let lyrics = `В късна нощ — преди години — сам над книгите старинни,
                 безотраден, вниквах, жаден, в знания незнайни тук; —
                 скръбен, търсех без сполука мир във тайната наука —
                 но оборен в сънна скука, чух внезапно бавен звук.`
@@ -346,7 +356,7 @@
         console.log( `2 + 4 = ${2+4}` )
         // 2 + 4 = 6
 
-        var firstName = "Ada";
+        let firstName = "Ada";
         console.log(`Hello, ${firstName}, how are you today?`)
         // Hello, Ada, how are you today?
       </code></pre>
@@ -356,8 +366,8 @@
     <p>Данните от този тип могат да приемат само 2 стойности: <span class="note">true</span> или <span class="note">false</span></p>
     <p>Използват се предимно в условните оператори, които са разгледани по-нататък.</p>
     <pre><code rel="JS" class="javascript">
-      var start = true;
-      var stop  = false;
+      let start = true;
+      let stop  = false;
     </code></pre>
   </section>
   <section><h3>null</h3>
@@ -1096,7 +1106,7 @@
 </section>
 
 
-<section class="disclaimer" data-background="../../../../outfit/images/for_slides/the_end_on_sand.jpg">
+<section class="disclaimer" data-background="../../../outfit/images/for_slides/the_end_on_sand.jpg">
    <p>These slides are based on</p>
    <p>customised version of </p>
    <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
@@ -1110,10 +1120,10 @@
     </div>
   </div>
   <!-- Custom processing -->
-  <script src="../../../../outfit/js/slides.js"></script>
+  <script src="../../../outfit/js/slides.js"></script>
   <!-- external scripts -->
-  <script src="../../../../lib/reveal.js/lib/js/head.min.js"></script>
-  <script src="../../../../lib/reveal.js/js/reveal.js"></script>
+  <!-- <script src="../../../lib/reveal.js/lib/js/head.min.js"></script> -->
+  <script src="../../../lib/reveal.js/js/reveal.js"></script>
    <!-- init reveal -->
   <script>
     // Full list of configuration options available at:
@@ -1141,14 +1151,16 @@
       // transition: Reveal.getQueryHash().transition || 'default'
       // Optional reveal.js plugins
       dependencies: [
-        { src: '../../../../lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-        { src: '../../../../lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        { src: '../../../../lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        { src: '../../../../lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure({tabReplace: highlightjsTabSize}); hljs.initHighlightingOnLoad(); } },
-        { src: '../../../../lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
-        { src: '../../../../lib/reveal.js/plugin/notes/notes.js', async: true }
+        { src: '../../../lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: '../../../lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '../../../lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '../../../lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure({tabReplace: highlightjsTabSize}); hljs.initHighlightingOnLoad(); } },
+        { src: '../../../lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+        { src: '../../../lib/reveal.js/plugin/notes/notes.js', async: true }
       ]
     });
   </script>
+  <!-- linkedin badge -->
+  <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 </body>
 </html>

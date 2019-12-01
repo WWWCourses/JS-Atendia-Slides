@@ -28,7 +28,7 @@
   /*background: red;*/
 }
 .reveal>.slides>section, .reveal>.slides>section dl{
-  font-size: .8em;
+  font-size: .9em;
 }
 
 /*sub-section title*/
@@ -290,7 +290,7 @@ section.copyright>.author a{
   vertical-align: middle;
 }
 section.copyright>.author img{
-  margin: 0;
+  /*margin: 0;*/
 }
 
 section.copyright .LI-profile-badge{
@@ -302,7 +302,7 @@ section.copyright>.contacts{
 section.copyright>.license{
   margin: 9em 0 0 0;
 }
-.copyright>.license img, div.copyright>.author img{
+.copyright>.license img, .copyright>.author img{
     height: 1em;
     vertical-align: middle;
     border: none;
