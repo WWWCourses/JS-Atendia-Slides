@@ -274,8 +274,19 @@
       // реално число
       const pi = 3.14;
 
-      // реално число, експонентен запис
-      let million = 10e6;
+      // реално число, експонентен запис:
+      let million = 1e6;
+    </code></pre>
+    <dl class="fa">
+      <dt>Експонентния запис: <code><i>x</i><b>e</b><i>y</i></code> се чете като  x*10<sup>y</sup></dt>
+    </dl>
+  </section>
+  <section><h3>numeric separator</h3>
+    <dl class="fa">
+      <dt class="note">numeric separator е все още в <a href="https://github.com/tc39/proposal-numeric-separator">Proposal Stage</a>. Преди да го използвате, се уверете че поддръжката му от браузерите ви удовлетворява: <a href="https://caniuse.com/#search=numeric%20separator">numeric separator @caniuse.com</a></dt>
+    </dl>
+    <pre><code rel="JS">
+      let budget = 1_234_000_000      
     </code></pre>
   </section>
   <section><h3>Низ (string):</h3>
@@ -318,9 +329,10 @@
       4. Ето какво прави "\'": --->'<---
     </code></pre>
   </section>
-  <section><h3>Низ (string):</h3>
+  <section><h3>Multiline strings?</h3>
     <dl class="fa" style="font-size: .8em;">
-      <dt>Забележете, че в низовете не може да използваме буквално символ за нов ред (клавиша enter):</dt>
+      <dt>Забележете, че в низовете не може да използваме буквално символ за нов ред (клавиша enter)</dt>
+      <dt>Интерпретатора очаква затварящата кавичка ( " или ' ) да бъде на същия ред и ако не я намери ще даде грешка:</dt>
       <pre style="font-size: .6em; width: 110%;"><code rel="JS" class="js">
       let lyrics = "В късна нощ — преди години — сам над книгите старинни,
             безотраден, вниквах, жаден, в знания незнайни тук; —
@@ -328,11 +340,11 @@
             но оборен в сънна скука, чух внезапно бавен звук."
       // Uncaught SyntaxError: Invalid or unexpected toke
       </code></pre>
-      <dt>но можем да го заместим с "\n":</dt>
+      <dt>но можем да заместим 'enter' с "\n" в низа:</dt>
       <pre style="font-size: .6em; width: 110%;"><code rel="JS" class="js">
         let lyrics = "В късна нощ — преди години — сам над книгите старинни,\nбезотраден, вниквах, жаден, в знания незнайни тук; —\nскръбен, търсех без сполука мир във тайната наука —\nно оборен в сънна скука, чух внезапно бавен звук."
       </code></pre>
-      <dt>или:</dt>
+      <dt>или да изпозваме конкатениране (разгледано в следващите слайдове):</dt>
       <pre style="font-size: .6em; width: 110%;"><code rel="JS" class="js">
         let lyrics = "В късна нощ — преди години — сам над книгите старинни," +
                "безотраден, вниквах, жаден, в знания незнайни тук; —" +
@@ -341,9 +353,9 @@
       </code></pre>
     </dl>
   </section>
-  <section><h3 class="advanced">Низ (string):</h3>
+  <section><h3>Template Strings</h3>
     <dl class="fa" style="font-size: .8em;">
-      <dt>В ES6 се въвежда и така наречения "<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">template string</a>", където низа се огражда в <b class="note">`</b> и <span class="note">`</span> (backticks).</dt>
+      <dt>В ES6 се въвежда и така наречения "<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">template string</a>", където низа се огражда в <code><b class="note">`</b> и <span class="note">`</span></code> (<a href="https://superuser.com/questions/254076/how-do-i-type-the-tick-and-backtick-characters-on-windows" title="how-do-i-type-the-tick-and-backtick-characters-on-windows">backticks</a>).</dt>
       <dt>Те добавят възможност в низ, да въвеждаме нов (enter) ред</dt>
       <pre style="font-size: .6em; width: 110%;"><code rel="JS" class="js">
         let lyrics = `В късна нощ — преди години — сам над книгите старинни,
@@ -361,6 +373,16 @@
         // Hello, Ada, how are you today?
       </code></pre>
     </dl>
+  </section>
+  <section><h3>Template Strings - examples</h3>
+    <pre><code rel="JS" class="js">
+      console.log(`234 + 432 = ${234 + 432}`)
+      // 234 + 432 = 666
+
+      let x = 3, y = 4;
+      console.log(`x = ${x}, y = ${y}, x+y = ${x+y}`)
+      // x = 3, y = 4, x+y = 7
+    </code></pre>
   </section>
   <section><h3>Булев тип (boolean)</h3>
     <p>Данните от този тип могат да приемат само 2 стойности: <span class="note">true</span> или <span class="note">false</span></p>
