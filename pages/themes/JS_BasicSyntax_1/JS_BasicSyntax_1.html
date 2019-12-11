@@ -189,10 +189,19 @@
   <section><h3>Глобални променливи</h3>
     <p>В JavaScript, променлива може да се създаде и без указване на <code class="note">var</code>/<span class="note">let</span> или <span class="note">const</span>. Например:</p>
     <pre><code rel="JS" class="js">
-      x = 10;
-      console.log(x); // 10 (Error in strict mode)
+      x = 10; // (Error in strict mode)
+      console.log(x);
     </code></pre>
     <p class="note">Това се счита за изключително лоша практика, тъй като се създава "<strong>глобална променлива</strong>" (в темата за <a href="../../../pages/themes/beginners/JS_Functions/JS_Functions.html#Scope">scope</a>, ще разгледаме защо), и в новите версии на езика (от ЕС5.1) при използването на strict mode, това би <strong>довело до грешка</strong>!</p>
+  </section>
+  <section><h3 class="advanced">Strict Mode</h3>
+    <pre><code rel="JS" class="js">
+      // global variable in  strict-mode:
+      'use strict';
+      x = 10; // Uncaught ReferenceError: x is not defined
+      console.log(x); 
+    </code></pre>
+    <p>Повече информация: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode">Strict_mode @MDN</a></p>
   </section>
   <section><h3>Правила за имена на променливи</h3>
     <dl class="fa">
@@ -288,7 +297,7 @@
     <pre><code rel="JS">
       let budget = 1_234_000_000      
     </code></pre>
-  </section>
+  </section>  
   <section><h3>Низ (string):</h3>
     <dl class="fa">
       <dt>Последователност от символи, заградена в единични или двойни кавички</dt>
@@ -425,6 +434,17 @@
       // но това е споменатия вече бъг в JS
 
     </code></pre>
+  </section>
+  <section><h3 class="advanced">стойността NaN</h3>
+    <dl class="fa">
+      <dt>В JavaScript, към типа number спада и стойността <span class="note">NaN (Not-a-Number)</span>.</dt>
+      <dt>Тя не се използва директно, а е дефинирана за да обозначи резултат от числова операция, която не е число.</dt>
+    </dl>
+    <pre><code rel="JS" class="js">
+      let res = 0 / "a";
+      console.log( res );         // NaN
+      console.log( typeof(res) ); // number
+    </code></pre> 
   </section>
 </section>
 
@@ -645,17 +665,35 @@
       console.log(2 === "2"); // false (no type coercion)
 
       // the Boolean operand "true" is converted to 1; "false" is converted to 0
-      console.log(2 == true);   // false
-      console.log(2 > true);    // true
-      console.log(true > false);  // true
-      console.log(-24 == true );  // false
+      console.log(true == 1);     // true
+      console.log(false == 0);    // true
+      console.log(true > false);  // true 
 
-      // lexicographic sorting, when both operands are strings
+      // lexicographic order, when both operands are strings
       console.log( "2" > "19999" )  // true, as ("2" > "1") is true
       console.log( "b" > "azzzz" )  // true, as ("b" > "a") is true
     </code></pre>
     <dl class="fa">
       <dt class="note">Забележете, че всички оператори за сравнение винаги връщат Булев тип стойност (true/false)</dt>
+    </dl>
+  </section>
+  <section><h3>lexicographic order</h3>
+    <dl class="fa">
+      <dt>При сравняването на низове, се използва лексикографската им подредба (<a href="https://en.wikipedia.org/wiki/Lexicographical_order">Lexicographical_order @wikipedia</a>), базирана на кодовете на символите от използваната кодова таблица (unicode, по дефоулт).</dt>
+      <dt>При сравняване на низове с различна дължина, по-късия се попълва с "нулеви" символи до достигане на дължината на по-дългия. "Нулевите символи" са с възможно най-малък код.</dt>
+      <dt>Самото сравняване се извършва символ по символ. Ако символите са еднакви, се продължава със следващите символи.</dt>
+    </dl>
+    <pre><code rel="JS" class="js">
+      console.log( "1" < "11"); // true, as "none symbol" code is smaller than "1" symbol code
+      console.log( "2" > "11"); // true, as "2" code is bigger than "1" code 
+      console.log( 'a' > 'A'); // true, as 'a' code is bigger than 'A' code 
+      console.log( "1199" > "12"); // false, as "11">"12" is false
+      console.log( "1" == "12");  // false, as "none symbol" is not == "2"      
+    </code></pre>
+  </section>  
+  <section><h3>References</h3>
+    <dl class="fa">
+      <dt><a href="https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/get-started/ch2.md#equalish">Equal...ish @You don't know JS</a></dt>
     </dl>
   </section>
   <section><h3>логически оператори (Logical Operators)</h3>
@@ -1096,14 +1134,23 @@
 </section>
 
 <section id="HW"><h2>Задачи за упражнение</h2>
-  <section><h3>HW1: Comparison Operators & Conditional Statement</h3>
+  <section><h3>HW1: Increment and Comparison Operators</h3>
+    <dl class="fa">
+      <dt>Описанието на задачата е дадено като коментар в JS полето</dt>
+    </dl>
+    <iframe height="300" style="width: 100%;" scrolling="no" title="HW: JS  increment operatorss" src="https://codepen.io/webdesigncourse/embed/oNgxJow?height=300&theme-id=20230&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+      See the Pen <a href='https://codepen.io/webdesigncourse/pen/oNgxJow'>HW: JS  increment operatorss</a> by Iva Popova
+      (<a href='https://codepen.io/webdesigncourse'>@webdesigncourse</a>) on <a href='https://codepen.io'>CodePen</a>.
+    </iframe>
+  </section>
+  <section><h3>HW2: Comparison Operators & Conditional Statement</h3>
     <dl class="fa">
       <dt>Описанието на задачите е дадено като коментар в съответните HTML и JS полета.</dt>
       <dt>Работете върху дадения код като добавите код, където е необходимо и изпратете линк на вашия Пен.</p>
     </dl>
     <iframe height='300' scrolling='no' title='HW2: Comparison Operators & Conditional Statement' src='//codepen.io/webdesigncourse/embed/BLYJGJ/?height=300&theme-id=20230&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/webdesigncourse/pen/BLYJGJ/'>HW2: Comparison Operators & Conditional Statement</a> by Iva Popova (<a href='https://codepen.io/webdesigncourse'>@webdesigncourse</a>) on <a href='https://codepen.io'>CodePen</a>.</iframe>
   </section>
-  <section><h3>HW2: Comparison Operators & Conditional Statement</h3>
+  <section><h3>HW3: Comparison Operators & Conditional Statement</h3>
     <dl class="fa">
       <dt>Описанието на задачите е дадено като коментар в JS полето.</dt>
       <dt>Работете върху дадения код, в JS полето, където е указано. Изпратете линк на вашия Пен.</p>
@@ -1121,7 +1168,7 @@
 
 <section><h2>допълнителни ресурси по темата</h2>
   <dl class="fa">
-    <dt><a href="https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md">You Don't Know JS: Up & Going by Kyle Simpson</a></dt>
+    <dt><a href="https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/get-started/README.md">You Don't Know JS Yet: Get Started - 2nd Edition by Kyle Simpson</a></dt>
     <dt><a href="http://eloquentjavascript.net/01_values.html">"Values, Types, and Operators" from "Eloquent JavaScript" by Marijn Haverbeke</a></dt>
     <dt><a href="http://eloquentjavascript.net/02_program_structure.html">"Program Structure" from "Eloquent JavaScript" by Marijn Haverbeke</a></dt>
   </dl>
